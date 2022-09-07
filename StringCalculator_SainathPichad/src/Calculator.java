@@ -48,7 +48,7 @@ public class Calculator {
 	        }
 
 	        if (!negativeString.toString().equals("")) {
-	            throw new IllegalArgumentException("Negatives not allowed: " + negativeString);
+	            throw new IllegalArgumentException("Negaatives not allowed: " + negativeString);
 	        }
 
 	        return total;
