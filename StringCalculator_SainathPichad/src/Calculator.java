@@ -1,23 +1,24 @@
 
 public class Calculator {
+//	
+//	////addded the add method in cal class 
 	
-	//addded the add method in cal class 
-	//
-	 public int add(String num) {
-	        if (num.length() < 2) {
-	            if (num.isEmpty()) {
+	
+	 public int add(String numbers) {
+	        if (numbers.length() < 2) {
+	            if (numbers.isEmpty()) {
 	                return 0;
 	            } else {
-	                return convertToInt(num);
+	                return convertToInt(numbers);
 	            }
 	        } else {
 	            String delimiter = ",";
-	            if (num.matches("//(.*)\n(.*)")) {
-	                delimiter = Character.toString(num.charAt(2));
-	                num = num.substring(4);
+	            if (numbers.matches("//(.*)\n(.*)")) {
+	                delimiter = Character.toString(numbers.charAt(2));
+	                numbers = numbers.substring(4);
 	            }
 
-	            String[] numList = splitNumbers(num, delimiter + "|\n");
+	            String[] numList = splitNumbers(numbers, delimiter + "|\n");
 	            return sum(numList);
 	        }
 	    }
@@ -26,6 +27,7 @@ public class Calculator {
 	        return numbers.split(divider);
 	    }
 
+	    //method used to convert string to Integer primitive object passing or wrapper class utilities are used here 
 	    private int convertToInt(String num) {
 	        return Integer.parseInt(num);
 	    }
@@ -46,7 +48,7 @@ public class Calculator {
 	        }
 
 	        if (!negativeString.toString().equals("")) {
-	            throw new IllegalArgumentException("Negatives Number is  not allowed: " + negativeString);
+	            throw new IllegalArgumentException("Negatives not allowed: " + negativeString);
 	        }
 
 	        return total;
