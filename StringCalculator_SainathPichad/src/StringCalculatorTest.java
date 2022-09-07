@@ -34,7 +34,7 @@ public class StringCalculatorTest {
 
     @Test
     @DisplayName("Test Multiple Numbers")
-    public void testAddMultipleNumbers() {
+    public void MultipleNumber_test() {
         assertEquals(3, stringCalculator.add("1,2"));
     }
 
@@ -69,6 +69,20 @@ public class StringCalculatorTest {
     @DisplayName("Test Other Delimiter")
     public void testOtherDelimiter() {
         assertEquals(3, stringCalculator.add("//;\n1;2"));
+    }
+
+//    
+//
+    @Test
+    @DisplayName("Test Alphabates contains string")
+    public void testalphabates() {
+        assertEquals(7, stringCalculator.add("1,2,a,c"));
+    }
+    
+    @Test
+    @DisplayName("Test odd even index addition in string")
+    public void testadd_odd_even() {
+        assertEquals(10, stringCalculator.add("0//**1**2*89"));
     }
 
 }
