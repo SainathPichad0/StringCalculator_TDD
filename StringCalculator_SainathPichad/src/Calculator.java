@@ -1,20 +1,23 @@
 
 public class Calculator {
-	 public int add(String numbers) {
-	        if (numbers.length() < 2) {
-	            if (numbers.isEmpty()) {
+	
+	//addded the add method in cal class 
+	//
+	 public int add(String num) {
+	        if (num.length() < 2) {
+	            if (num.isEmpty()) {
 	                return 0;
 	            } else {
-	                return convertToInt(numbers);
+	                return convertToInt(num);
 	            }
 	        } else {
 	            String delimiter = ",";
-	            if (numbers.matches("//(.*)\n(.*)")) {
-	                delimiter = Character.toString(numbers.charAt(2));
-	                numbers = numbers.substring(4);
+	            if (num.matches("//(.*)\n(.*)")) {
+	                delimiter = Character.toString(num.charAt(2));
+	                num = num.substring(4);
 	            }
 
-	            String[] numList = splitNumbers(numbers, delimiter + "|\n");
+	            String[] numList = splitNumbers(num, delimiter + "|\n");
 	            return sum(numList);
 	        }
 	    }
@@ -43,7 +46,7 @@ public class Calculator {
 	        }
 
 	        if (!negativeString.toString().equals("")) {
-	            throw new IllegalArgumentException("Negatives not allowed: " + negativeString);
+	            throw new IllegalArgumentException("Negatives Number is  not allowed: " + negativeString);
 	        }
 
 	        return total;
